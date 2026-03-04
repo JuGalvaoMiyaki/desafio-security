@@ -30,7 +30,7 @@ jobs:
 
       - name: Rodar testes
         run: |
-          docker run --rm projeto-security-ci pytest tests/
+          docker run --rm projeto-security-ci pytest test_app/
 
   docker-publish:
     name: Publicar Docker Imagem
