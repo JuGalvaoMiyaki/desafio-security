@@ -26,11 +26,11 @@ jobs:
    
       - name: Build do Docker
         run: |
-          docker build -t projeto-security-ci .
+          docker build -t app:ci.
 
       - name: Rodar testes
         run: |
-          docker run --rm projeto-security-ci pytest test_app/
+          docker run --rm app:ci python -m pytest -q test_app.py
 
   docker-publish:
     name: Publicar Docker Imagem
