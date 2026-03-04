@@ -1,4 +1,4 @@
-name: Projeto Security CI
+name: Projeto Desafio-Security CI
 
 on:
   push:
