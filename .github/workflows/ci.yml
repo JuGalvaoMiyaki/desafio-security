@@ -26,7 +26,7 @@ jobs:
    
       - name: Build do Docker
         run: |
-          docker build -t app:ci.
+          docker build -t app:ci .
 
       - name: Rodar testes
         run: |
