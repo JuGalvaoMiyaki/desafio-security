@@ -3,11 +3,12 @@ name: Projeto Security CI
 on:
   push:
     branches:
-      ["main"]
+      - main
+      - desafio-teste
   pull_request:
     branches:
-      ["main"]
-      ['desafio-teste']
+      - main
+      - desafio-teste
 
 jobs:
   build:
