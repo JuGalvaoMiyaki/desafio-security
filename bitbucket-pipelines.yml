@@ -1,0 +1,36 @@
+# Este arquivo define sua pipeline do Bitbucket.
+# Ele usa uma imagem Python, instala as dependências e executa testes e um scan de segurança.
+# Também constrói e envia a imagem Docker para o Docker Hub em pushes para o branch main.
+
+image: python:3.11
+
+pipelines:
+  default:
+    - step:
+        name: Test and Security Scan
+        caches:
+          - pip
+        script:
+          - pip install -r requirements.txt
+          - pip install bandit
+          - bandit -r .
+          - pytest
+  branches:
+    main:
+      - step:
+          name: Test and Security Scan
+          caches:
+            - pip
+          script:
+            - pip install -r requirements.txt
+            - pip install bandit
+            - bandit -r .
+            - pytest
+      - step:
+          name: Build and Push to Docker Hub
+          services:
+            - docker
+          script:
+            - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
+            - docker build -t jugalvaomiyaki/desafio-security:latest .
+            - docker push jugalvaomiyaki/desafio-security:latest
