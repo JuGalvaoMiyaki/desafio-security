@@ -12,4 +12,6 @@ jobs:
       - name: Run Gitleaks
         uses: gitleaks/gitleaks-action@v2
         with:
-          args: detect --source . --report-path gitleaks-report.json
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          report-path: gitleaks-report.json
+          source: .
