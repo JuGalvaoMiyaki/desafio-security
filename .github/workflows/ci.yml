@@ -30,7 +30,7 @@ jobs:
 
       - name: Rodar testes
         run: |
-          docker run ---rm app:ci python -m pytest -q test_app.py
+          docker run --rm app:ci python -m pytest -q test_app.py
 
   docker-publish:
     name: Publicar Docker Imagem
