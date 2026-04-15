@@ -13,3 +13,4 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
         with:
           args: detect --source . --report-path gitleaks-report.json
+          token: ${{ secrets.GITHUB_TOKEN }}

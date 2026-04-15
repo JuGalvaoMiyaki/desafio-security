@@ -1,0 +1,15 @@
+name: Block direct commits
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  prevent-direct-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail job
+        run: |
+          echo "🚫 Commits diretos na main não são permitidos!"
+          exit 1
