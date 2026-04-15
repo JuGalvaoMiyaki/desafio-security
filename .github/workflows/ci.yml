@@ -22,12 +22,22 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.11' # Alinhado com o Bitbucket Pipelines
 
-            versioning:
+      - name: Build do Docker
+        run: |
+          docker build -t app:ci .
+
+      - name: Rodar testes
+        run: |
+          docker run --rm app:ci python -m pytest -q test_app.py
+
+  versioning:
     name: Versionamento Automático
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      contents: write # Necessário para criar e enviar tags
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
