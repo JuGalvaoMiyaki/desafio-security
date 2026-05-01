@@ -6,7 +6,7 @@ from github import Github # Importando a biblioteca PyGithub
 def publicar_no_pages(mensagem_release):
     # 1. Configurações e Segredos
     token = os.getenv("GITHUB_TOKEN")
-    repo_name = "https://github.com/JuGalvaoMiyaki/desafio-security" # <--- TROQUE PELO SEU REPOSITÓRIO
+    repo_name = "https://jugalvaomiyaki.github.io/desafio-security/" # <--- TROQUE PELO SEU REPOSITÓRIO
     file_path = "changelog.md" # O arquivo que o GitHub Pages vai ler
 
     if not token:
