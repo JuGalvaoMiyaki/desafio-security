@@ -34,10 +34,11 @@ def publicar_no_pages(mensagem_release):
         commit_msg = f"docs: atualiza release notes via script - {data_hoje}"
 
         if sha_arquivo:
-            repo.update_file(file_path, commit_msg, novo_conteudo_completo, sha_arquivo)
+            repo.update_file(file_path, commit_msg, novo_conteudo_completo, sha_arquivo, branch = "teste-regras")
         else:
-            repo.create_file(file_path, commit_msg, novo_conteudo_completo)
+            repo.create_file(file_path, commit_msg, novo_conteudo_completo, branch = "teste-regras")
 
+        
         print("✅ Sucesso! O GitHub Pages deve atualizar em instantes.")
 
     except Exception as e:
