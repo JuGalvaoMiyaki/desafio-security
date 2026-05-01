@@ -5,7 +5,7 @@ from github import Github
 
 def publicar_no_pages(mensagem_release):
     token = os.getenv("GITHUB_TOKEN")
-    repo_name = "https://github.com/JuGalvaoMiyaki/desafio-security"
+    repo_name = "JuGalvaoMiyaki/desafio-security"
     file_path = "changelog.md"
 
     if not token:
