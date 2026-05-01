@@ -1,3 +1,8 @@
+## 🚀 Release - 01/05/2026 14:17
+Alterei branch em GitHub Pages
+
+---
+
 ## 🚀 Release - 01/05/2026 14:11
 Adicionei config.yml para melhorar o visual da minha página
 
